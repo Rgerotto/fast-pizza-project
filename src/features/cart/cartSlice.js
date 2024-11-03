@@ -42,7 +42,7 @@ export const { addItem, deleteItem, increaseItem, decreaseItem, clearCart } = ca
 export default cartSlice.reducer;
 export const getUsername = (state) => state.user.username;
 export const getCart = (state) => state.cart.cart;
-export const getTotalCartQuantity = (state) => state.cart.cart.reduce((sum, item) => sum +item.quantity, 0);
-export const getTotalCartPrice = (state) => state.cart.cart.reduce((sum, item) => sum +item.unitPrice, 0);
+export const getTotalCartQuantity = (state) => state.cart.cart.reduce((sum, item) => sum + item.quantity, 0);
+export const getTotalCartPrice = (state) => state.cart.cart.reduce((sum, item) => sum + item.totalPrice, 0);
 
 export const getCurrentQuantityById = (id) => (state) => state.cart.cart.find((item) => item.pizzaId === id)?.quantity ?? 0;
